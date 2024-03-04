@@ -1,0 +1,529 @@
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: max-content auto max-content;
+}
+body > main {
+  width: var(--width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  justify-content: center;
+}
+body > main > h1,
+body > main > h2,
+body > main > h3,
+body > main > h4,
+body > main > h5,
+body > main > h6,
+body > main > div,
+body > main > p {
+  width: var(--width);
+  max-width: var(--max-width);
+}
+body > main > h1 {
+  width: var(--width);
+  max-width: var(--max-width);
+  align-self: start;
+  text-align: right;
+  margin-bottom: calc(1.5 * var(--default-gap));
+}
+body > main > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > p.payments-introduction {
+  margin-bottom: var(--default-gap);
+}
+body > main > div {
+  margin-bottom: var(--default-gap);
+}
+body > main > div.modal {
+  margin: 0;
+  max-width: none;
+}
+body > main > div > form {
+  width: var(--width);
+  max-width: var(--max-width);
+  margin-bottom: calc(2 * var(--default-gap));
+}
+body > main > div > form > div,
+body > main > div > form > p {
+  margin-bottom: var(--default-gap);
+}
+body > main > div > form > button.submit {
+  margin-top: 0;
+}
+body > main > div > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > p.small {
+  font-size: var(--font-size-small);
+}
+body > main > div > article {
+  margin-bottom: calc(2 * var(--default-gap));
+}
+body > main > div > article > h2,
+body > main > div > article p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > article > h2.registered,
+body > main > div > article p.registered {
+  margin-top: var(--default-gap);
+  padding: calc(var(--default-gap) / 2) var(--default-gap);
+  border: var(--border);
+  text-align: center;
+}
+body > main > div > article > button {
+  margin-top: calc(var(--default-gap) / 2);
+}
+body > main > div h2 {
+  margin-bottom: var(--default-gap);
+}
+body > main > div.cards {
+  margin-bottom: 0;
+}
+body > main > div.cards > div.description {
+  margin-bottom: calc(2 * var(--default-gap));
+}
+body > main > div.cards > div.description > p {
+  margin-bottom: var(--default-gap);
+}
+body > main > div.cards > div.card {
+  padding: var(--default-gap);
+  margin-bottom: calc(2 * var(--default-gap));
+  border: var(--border);
+}
+body > main > div.cards > div.card:last-child {
+  margin-bottom: 0;
+}
+body > main > div.cards > div.card > h2 {
+  margin-bottom: 0;
+}
+body > main > div.cards > div.card > h2,
+body > main > div.cards > div.card > h3 {
+  text-align: center;
+}
+body > main > div.cards > div.card > p {
+  text-align: center;
+  margin-bottom: calc(var(--default-gap) / 2);
+  font-size: var(--font-size-big);
+}
+body > main > div.cards > div.card > p.price {
+  font-size: var(--font-size-bigger);
+}
+body > main > div.cards > div.card > p > a {
+  font-size: var(--font-size-big);
+}
+body > main > div.cards > div.card > button {
+  margin: calc(var(--default-gap) / 2) 0;
+}
+body > main > div > div.profile {
+  margin-bottom: calc(3 * var(--default-gap));
+}
+body > main > div > div.profile > div.balances {
+  display: grid;
+  grid-template-columns: 20rem max-content;
+  margin-bottom: var(--default-gap);
+}
+body > main > div > div.profile > div.balances > p.balance {
+  font-size: var(--font-size-big);
+}
+body > main > div > div.profile > h2 {
+  margin-bottom: calc(var(--default-gap) / 3);
+}
+body > main > div > div.profile > form {
+  width: var(--width);
+  max-width: var(--max-width);
+  margin-bottom: calc(3 * var(--default-gap));
+}
+body > main > div > div.profile > form > div.input > input {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > div.profile > form > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > div.profile > p {
+  margin-bottom: var(--default-gap);
+}
+body > main > div > div.profile > p.balance {
+  font-size: var(--font-size-bigger);
+  text-align: center;
+}
+body > main > div > div.description {
+  margin-bottom: calc(var(--default-gap) * 1.5);
+}
+body > main > div > div.description > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > div > div.classtype > h3 {
+  font-size: var(--font-size-big);
+  text-align: center;
+}
+body > main > div > div > div.classtype > div.openclassinfo {
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  gap: var(--default-gap);
+  margin-top: -1rem;
+}
+body > main > div > div > div.classtype > div.openclassinfo > p {
+  padding-left: calc(var(--default-gap) / 4);
+  font-size: var(--font-size-bigger);
+  text-align: center;
+  color: var(--link-text);
+  transform: rotate(90deg);
+  transition: var(--transition-slow);
+}
+body > main > div > div > div.classtype > div.openclassinfo > p.open {
+  transform: rotate(-90deg);
+}
+body > main > div > div > div.classtype > div.openclassinfo:hover {
+  cursor: pointer;
+}
+body > main > div > div > div.classtype > div.openclassinfo:hover > p {
+  color: var(--link-hover-text);
+}
+body > main > div > div > div.classtype > div.classinfo {
+  max-height: 0;
+  overflow: hidden;
+  transition: var(--transition-slow);
+}
+body > main > div > div > div.classtype > div.classinfo > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > div > div > div.classtype > div.classinfo.open {
+  max-height: 500px;
+}
+body > main > div > div.calendar > div.navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  gap: var(--default-gap);
+  margin-bottom: var(--default-gap);
+  text-align: center;
+}
+body > main > div > div.calendar > div.navigation > button.arrow {
+  padding-top: 0;
+  padding-bottom: 0;
+  font-size: var(--font-size-biggest);
+  line-height: 1.2;
+  color: var(--link-text);
+  background-color: var(--background-color);
+}
+body > main > div > div.calendar > div.navigation > button.arrow:hover {
+  cursor: pointer;
+}
+body > main > div > div.calendar > div.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: var(--default-gap);
+}
+body > main > div > div.calendar > div.days > p {
+  font-size: var(--font-size-small);
+  text-align: center;
+}
+body > main > div > div.calendar > div.days.small {
+  display: none;
+}
+@media (max-width: 700px) {
+  body > main > div > div.calendar > div.days.small {
+    display: grid;
+  }
+}
+body > main > div > div.calendar > div.days.large {
+  display: grid;
+}
+@media (max-width: 700px) {
+  body > main > div > div.calendar > div.days.large {
+    display: none;
+  }
+}
+body > main > div > div.calendar > div.content {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: var(--default-gap);
+  border-collapse: collapse;
+}
+body > main > div > div.calendar > div.content > div.cell {
+  min-height: 50px;
+  padding: calc(var(--default-gap) / 2) 0;
+  border-collapse: collapse;
+  border: var(--border-lighter);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--default-gap) / 4);
+}
+body > main > div > div.calendar > div.content > div.cell > p {
+  font-size: var(--font-size-small);
+  line-height: normal;
+  text-align: center;
+}
+body > main > div > div.calendar > div.content > div.cell > div {
+  padding-top: calc(var(--default-gap) / 4);
+}
+body > main > div > div.calendar > div.content > div.cell > div > p {
+  font-size: var(--font-size-small);
+  line-height: normal;
+  text-align: center;
+}
+body > main > div > div.calendar > div.content > div.cell > div > p.start.active {
+  color: var(--link-text);
+}
+@media (max-width: 700px) {
+  body > main > div > div.calendar > div.content > div.cell > div > p.title {
+    display: none;
+  }
+}
+body > main > div > div.calendar > div.content > div.cell > div > p.title.active {
+  color: var(--link-text);
+}
+body > main > div > div.calendar > div.content > div.cell > div > p.dot {
+  display: none;
+  font-size: var(--font-size-biggest);
+  line-height: 0.5;
+}
+@media (max-width: 700px) {
+  body > main > div > div.calendar > div.content > div.cell > div > p.dot {
+    display: block;
+  }
+}
+body > main > div > div.calendar > div.content > div.cell > div > p.dot.active {
+  color: var(--link-hover-text);
+}
+body > main > div > div.calendar > div.content > div.cell > div > div > p {
+  font-size: var(--font-size-smallest);
+  text-align: center;
+}
+body > main > div > div.calendar > div.content > div.cell > div > div > p > a {
+  font-size: var(--font-size-smallest);
+  text-align: center;
+}
+body > main > div > div.calendar > div.content > div.cell > div > div button {
+  font-size: var(--font-size-small);
+  margin-top: calc(var(--default-gap) / 4);
+  padding: 0;
+}
+body > main > div > div.calendar > div.content > div.cell:hover {
+  cursor: context-menu;
+  border-collapse: collapse;
+  border: var(--border);
+}
+body > main > div > div.calendar > div.content > div.cell:hover > p.title {
+  color: var(--link-hover-text);
+}
+body > main > div > div.calendar > div.content > div.cell:hover > p.dot {
+  color: var(--link-hover-text);
+}
+body > main > div > div.calendar > div.content > div.cell.mask {
+  border: var(--border-lightest);
+}
+body > main > div > div.calendar > div.content > div.cell.active {
+  border-color: var(--link-hover-text);
+}
+body > main > div > div.users {
+  padding: var(--default-gap) 0;
+  margin-bottom: calc(1 * var(--default-gap));
+  border-bottom: var(--border);
+}
+body > main > div > div.users > h2 {
+  margin-bottom: 0;
+}
+body > main > div > div.users > p.small {
+  font-size: var(--font-size-smallest);
+}
+body > main > div > div.users > div.balances {
+  display: grid;
+  grid-template-columns: 1fr max-content max-content max-content max-content;
+  align-items: center;
+  gap: var(--default-gap);
+  margin-top: calc(var(--default-gap) / 2);
+}
+body > main > div > div.users > div.balances > p.balance {
+  font-size: var(--font-size-small);
+}
+body > main > div > div.users > div.balances > button {
+  font-size: var(--font-size-small);
+  height: max-content;
+  width: max-content;
+}
+body > main > div > div.users > button.savebalance {
+  margin-top: var(--default-gap);
+}
+body > main > div > div.payments {
+  padding: var(--default-gap) 0;
+  border-bottom: var(--border);
+}
+body > main > div > div.payments > p {
+  overflow: hidden;
+  margin-bottom: calc(var(--default-gap) / 8);
+}
+body > main > div > div.payments > p.header {
+  color: var(--link-hover-text);
+}
+body > main > div > div.registrations {
+  padding: var(--default-gap) 0;
+  border-bottom: var(--border);
+  display: grid;
+  grid-template-columns: auto max-content;
+  align-items: center;
+  gap: var(--default-gap);
+}
+body > main > div > div.registrations > div {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  gap: var(--default-gap);
+  overflow: hidden;
+}
+@media (max-width: 500px) {
+  body > main > div > div.registrations > div {
+    grid-template-columns: none;
+    grid-template-rows: max-content max-content;
+    gap: 0;
+  }
+}
+body > main > div > div.registrations > div > p.title {
+  overflow: hidden;
+}
+body > main > div > div.handle-payments {
+  margin-bottom: calc(2 * var(--default-gap));
+}
+body > main > div > div.handle-payments > form > div {
+  margin-top: var(--default-gap);
+}
+body > main > div > div.delete-payments > div {
+  padding: var(--default-gap) 0;
+  border-bottom: var(--border);
+}
+body > main > div > div.delete-payments > div > button {
+  margin-top: var(--default-gap);
+}
+body > main > div > p.success-intro,
+body > main > div > div.success {
+  margin-bottom: calc(2 * var(--default-gap));
+}
+body > main > div > p.success-intro > div.new_balance,
+body > main > div > div.success > div.new_balance {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: var(--default-gap);
+}
+body > main > div > p.success-intro > div.new_balance > p.balance,
+body > main > div > div.success > div.new_balance > p.balance {
+  font-size: var(--font-size-big);
+}
+body > main > div > p.payments-introduction {
+  margin-bottom: var(--default-gap);
+}
+body > main > div > div.subscription {
+  padding: var(--default-gap);
+  border-bottom: var(--border);
+}
+body > main > div > div.subscription > p.user,
+body > main > div > div.subscription > p.date {
+  font-size: var(--font-size-small);
+}
+body > main#landing {
+  width: 100vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  align-content: center;
+}
+body > main#landing > img#background-image {
+  z-index: -1;
+  position: fixed;
+  object-fit: cover;
+  min-height: 100%;
+  min-width: 100%;
+  width: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.1;
+}
+body > main#landing > div#header {
+  width: 100vw;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+body > main#landing > div#header > h1,
+body > main#landing > div#header > h2 {
+  line-height: 1;
+  text-align: center;
+  opacity: 0.7;
+}
+body > main#landing > div#header > h1 {
+  font-size: calc(4rem + 5vw);
+}
+body > main#landing > div#header > h2 {
+  color: var(--text);
+  font-size: calc(2rem + 3vw);
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main#landing > div#header > div {
+  width: var(--width);
+  max-width: var(--max-width);
+  margin: calc(2 * var(--default-gap)) auto 0 auto;
+}
+body > main#landing > div#header > div > div > p {
+  text-align: center;
+}
+body > main#landing > div#header > div > div.intro {
+  margin-bottom: calc(1.2 * var(--default-gap));
+}
+body > main#landing > div#header > div > div.intro > p {
+  margin-top: calc(var(--default-gap) / 2);
+}
+body > main#landing > div#header > div > div.subscribe > p {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main#landing > div#header > div > div.subscribe > form > p.feedback {
+  margin-bottom: var(--default-gap);
+}
+body > main.errors {
+  min-height: 100vh;
+  display: grid;
+  align-content: center;
+}
+body > main > form.mailings > div.mailings {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--default-gap);
+  padding: calc(var(--default-gap) / 2) var(--default-gap);
+  border: var(--border-lightest);
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+body > main > form.mailings > div.mailings > p {
+  width: max-content;
+  font-size: var(--font-size-small);
+}
+body > main > form.mailings > div.toggle {
+  margin-bottom: var(--default-gap);
+}
+body > main > form.mailings > div.input {
+  margin-top: var(--default-gap);
+}
+body > main > form.mailings > p.feedback {
+  margin-bottom: var(--default-gap);
+}
+div.spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#nprogress .bar {
+  background: var(--link-text) !important;
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--link-text), 0 0 5px var(--link-text) !important;
+}
+#nprogress .spinner-icon {
+  border-top-color: var(--link-text) !important;
+  border-left-color: var(--link-text) !important;
+}

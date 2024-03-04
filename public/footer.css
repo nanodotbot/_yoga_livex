@@ -1,0 +1,41 @@
+footer {
+  width: 95vw;
+  max-width: var(--max-width);
+  margin: calc(2.5 * var(--default-gap)) auto;
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  justify-content: space-between;
+}
+footer div#social-header {
+  padding: calc(var(--default-gap) / 2);
+}
+footer .social {
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-template-columns: min-content min-content;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--default-gap) / 2);
+}
+footer .social > a {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+footer .social > a > svg {
+  fill: var(--text);
+}
+footer .social > a:hover {
+  background-color: transparent;
+}
+footer .social > a:hover > svg {
+  fill: var(--link-hover-text);
+}
+footer > div > a {
+  color: var(--text);
+}
+footer > div > a.active {
+  color: var(--link-hover-text);
+}

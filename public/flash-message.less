@@ -1,0 +1,16 @@
+div#flash-message {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    padding: calc(var(--default-gap) / 3) var(--default-gap);
+
+    background-color: var(--background);
+    text-align: center;
+
+    > p {
+        color: var(--selection-text);
+        font-size: var(--font-size-small);
+    }
+}

@@ -1,0 +1,48 @@
+footer {
+    width: 95vw;
+    max-width: var(--max-width);
+    margin: calc(2.5 * var(--default-gap)) auto;
+
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    justify-content: space-between;
+
+    div#social-header {
+        padding: calc(var(--default-gap) / 2);
+    }
+    .social {
+        width: 100%;
+
+        text-align: center;
+    
+        display: grid;
+        grid-template-columns: min-content min-content;
+        align-items: center;
+        justify-content: center;
+        gap: calc(var(--default-gap) / 2);
+    
+        > a {
+            display: block;
+            width: 24px;
+            height: 24px;
+
+            > svg {
+                fill: var(--text);
+            }
+
+            &:hover {
+                background-color: transparent;
+                > svg {
+                    fill: var(--link-hover-text);
+                }
+            }
+        }
+    }
+    > div > a {
+        color: var(--text);
+        &.active {
+            color: var(--link-hover-text);
+        }
+    }
+}

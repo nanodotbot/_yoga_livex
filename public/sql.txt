@@ -1,0 +1,22 @@
+  2014_10_12_000000_create_users_table ...................................................................................  
+  ⇂ create table "users" ("id" integer primary key autoincrement not null, "name" varchar not null, "email" varchar not null
+, "is_admin" integer not null default '0', "is_teacher" integer not null default '0', "email_notifications" integer not null
+ default '0', "balance" integer not null default '0', "email_verified_at" datetime, "password" varchar not null, "remember_t
+oken" varchar, "created_at" datetime, "updated_at" datetime)
+  ⇂ create unique index "users_name_unique" on "users" ("name")
+  ⇂ create unique index "users_email_unique" on "users" ("email")
+  2014_10_12_100000_create_password_reset_tokens_table ...................................................................  
+  ⇂ create table "password_reset_tokens" ("email" varchar not null, "token" varchar not null, "created_at" datetime, primary
+ key ("email"))
+  2019_08_19_000000_create_failed_jobs_table .............................................................................  
+  ⇂ create table "failed_jobs" ("id" integer primary key autoincrement not null, "uuid" varchar not null, "connection" text 
+not null, "queue" text not null, "payload" text not null, "exception" text not null, "failed_at" datetime not null default C
+URRENT_TIMESTAMP)
+  ⇂ create table "classes" ("id" integer primary key autoincrement not null, "created_at" datetime, "updated_at" datetime, "title" varchar not null, "startTime" datetime not null, "length" integer not null, "places" integer not null, "teacher" varchar not null, "level" varchar not null, "description" varchar not null)
+  2024_01_05_120248_create_abouts_table ..................................................................................  
+  ⇂ create table "abouts" ("id" integer primary key autoincrement not null, "created_at" datetime, "updated_at" datetime, "position" integer not null, "paragraph" varchar not null)
+  2024_01_21_185135_create_payments_table ................................................................................  
+  ⇂ create table "payments" ("id" integer primary key autoincrement not null, "user_id" integer not null, "stripeid" integer not null, "intent" varchar not null, "payment_status" varchar not null, "amount" integer not null, "email" varchar not null, "name" varchar not null, "created" datetime not null, "created_at" datetime, "updated_at" datetime, foreign key("user_id") references "users"("id") on delete cascade)
+  2024_01_23_153909_create_subscriptions_table ...........................................................................  
+  ⇂ create table "subscriptions" ("id" integer primary key autoincrement not null, "user_id" integer not null, "classes_id" 
+integer not null, "created_at" datetime, "updated_at" datetime, foreign key("user_id") references "users"("id") on delete cascade, foreign key("classes_id") references "classes"("id") on delete cascade)

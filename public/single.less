@@ -1,0 +1,583 @@
+body {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-rows: max-content auto max-content;
+
+    > main {
+        // min-height: 100%;
+        width: var(--width);
+        max-width: var(--max-width);
+        margin: 0 auto;
+
+        display: grid;
+        justify-content: center;
+
+        > h1, > h2, > h3, > h4, > h5, > h6, > div, > p {
+            width: var(--width);
+            max-width: var(--max-width);
+        }    
+
+        > h1 {
+            width: var(--width);
+            max-width: var(--max-width);
+
+            align-self: start;
+
+            text-align: right;
+            margin-bottom: calc(1.5 * var(--default-gap));
+        }
+        > p {
+            margin-bottom: calc(var(--default-gap) / 2);
+            &.payments-introduction {
+                margin-bottom: var(--default-gap);
+            }
+        }
+        > div {
+            margin-bottom: var(--default-gap);
+            &.modal {
+                margin: 0;
+                max-width: none;
+            }
+            > form {
+                width: var(--width);
+                max-width: var(--max-width);
+
+                margin-bottom: calc(2 * var(--default-gap));
+
+                > div, > p {
+                    margin-bottom: var(--default-gap);
+                }
+                // TODO: check
+                > button.submit {
+                    margin-top: 0;
+                }
+            }
+            > p {
+                margin-bottom: calc(var(--default-gap) / 2);
+                &.small {
+                    font-size: var(--font-size-small);
+                }
+            }
+            > article {
+                margin-bottom: calc(2 * var(--default-gap));
+                > h2, p {
+                    margin-bottom: calc(var(--default-gap) / 2);
+                    &.registered {
+                        margin-top: var(--default-gap);
+                        padding: calc(var(--default-gap) / 2) var(--default-gap);
+                        border: var(--border);
+                        
+                        text-align: center;
+                    }
+                }
+                > button {
+                    margin-top: calc(var(--default-gap) / 2);
+                }
+            }
+            h2 {
+                margin-bottom: var(--default-gap);
+            }
+            &.cards {
+                margin-bottom: 0;
+
+                > div.description {
+                    margin-bottom: calc(2 * var(--default-gap));
+                    > p {
+                        margin-bottom: var(--default-gap);
+                    }
+                }
+                > div.card {
+                    padding: var(--default-gap);
+                    margin-bottom: calc(2 * var(--default-gap));
+                    border: var(--border);
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                    > h2 {
+                        margin-bottom: 0;
+                    }
+                    > h2, > h3 {
+                        text-align: center;
+                    }
+                    > p {
+                        text-align: center;
+                        margin-bottom: calc(var(--default-gap) / 2);
+                        font-size: var(--font-size-big);
+                        &.price {
+                            font-size: var(--font-size-bigger);
+                        }
+                        > a {
+                            font-size: var(--font-size-big);
+                        }
+                    }
+                    > button {
+                        margin: calc(var(--default-gap) / 2) 0;
+                    }
+                }
+            }
+            > div {
+                &.profile {
+                    margin-bottom: calc(3 * var(--default-gap));
+
+                    > div.balances {
+                        display: grid;
+                        grid-template-columns: 20rem max-content;
+
+                        margin-bottom: var(--default-gap);
+
+                        > p.balance {
+                            font-size: var(--font-size-big);
+                        }
+                    }
+
+                    > h2 {
+                        margin-bottom: calc(var(--default-gap) / 3);
+                    }
+
+                    > form {
+                        width: var(--width);
+                        max-width: var(--max-width);
+        
+                        margin-bottom: calc(3 * var(--default-gap));
+
+                        > div.input > input {
+                            margin-bottom: calc(var(--default-gap) / 2);
+                        }
+                        > p {
+                            margin-bottom: calc(var(--default-gap) / 2);
+                        }    
+                    }
+                    > p {
+                        margin-bottom: var(--default-gap);
+                        &.balance {
+                            font-size: var(--font-size-bigger);
+                            text-align: center;
+                        }
+                    } 
+                }
+                &.description {
+                    margin-bottom: calc(var(--default-gap) * 1.5);
+                    > p {
+                        margin-bottom: calc(var(--default-gap) / 2);
+                    }
+                }
+                > div.classtype {
+                    // margin-bottom: var(--default-gap);
+                    > h3 {
+                        font-size: var(--font-size-big);
+                        text-align: center;
+                    }
+                    > div.openclassinfo {
+                        display: grid;
+                        grid-template-columns: 1fr max-content 1fr;
+                        align-items: center;
+                        gap: var(--default-gap);
+
+                        margin-top: -1rem;
+                        > p {
+                            padding-left: calc(var(--default-gap) / 4);
+
+                            font-size: var(--font-size-bigger);
+                            text-align: center;
+                            color: var(--link-text);
+                            transform: rotate(90deg);
+                            transition: var(--transition-slow);
+
+                            &.open {
+                                transform: rotate(-90deg);
+                            }
+                        }
+                        // > hr {
+                        //     border-bottom: .1rem solid var(--link-text);
+                        // }
+                        &:hover {
+                            cursor: pointer;
+                            > p {
+                                color: var(--link-hover-text);
+                            }
+                            // > hr {
+                            //     border-bottom: .1rem solid var(--link-hover-text);
+                            // }
+                        }
+                    }
+                    > div.classinfo {
+                        max-height: 0;
+                        // https://stackoverflow.com/questions/38643529/how-can-i-transition-width-of-content-with-width-auto
+                        overflow: hidden;
+                        transition: var(--transition-slow);
+
+                        > p {
+                            margin-bottom: calc(var(--default-gap) / 2);
+                        }
+
+                        &.open {
+                            max-height: 500px;
+                        }
+                    }
+                }
+                &.calendar {
+                    > div.navigation {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        align-items: center;
+                        gap: var(--default-gap);
+
+                        margin-bottom: var(--default-gap);
+
+                        text-align: center;
+
+                        > button.arrow {
+                            padding-top: 0;
+                            padding-bottom: 0;
+
+                            font-size: var(--font-size-biggest);
+                            line-height: 1.2;
+                            color: var(--link-text);
+                            background-color: var(--background-color);
+
+                            &:hover {
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    > div.days {
+                        display: grid;
+                        grid-template-columns: repeat(7, 1fr);
+                        margin-bottom: var(--default-gap);
+                        > p {
+                            font-size: var(--font-size-small);
+                            text-align: center;
+                        }
+                        &.small {
+                            display: none;
+                            @media(max-width: 700px){
+                                display: grid;
+                            }
+                        }
+                        &.large {
+                            display: grid;
+                            @media(max-width: 700px){
+                                display: none;
+                            }
+                        }
+                    }
+                    > div.content {
+                        display: grid;
+                        grid-template-columns: repeat(7, 1fr);
+
+                        margin-bottom: var(--default-gap);
+                        border-collapse: collapse;
+
+                        > div.cell {
+                            min-height: 50px;
+                            padding: calc(var(--default-gap) / 2) 0;
+                            border-collapse: collapse;
+                            border: var(--border-lighter);
+
+                            display: grid;
+                            grid-template-rows: auto 1fr;
+                            align-items: center;
+                            justify-content: center;
+                            gap: calc(var(--default-gap) / 4);
+                            
+                            > p {
+                                font-size: var(--font-size-small);
+                                line-height: normal;
+                                text-align: center;
+                            }
+                            > div {
+                                padding-top: calc(var(--default-gap) / 4);
+                                > p {
+                                    font-size: var(--font-size-small);
+                                    line-height: normal;
+                                    text-align: center;
+                                    &.start {
+                                        &.active {
+                                            color: var(--link-text);
+                                        }    
+                                    }
+                                    &.title {
+                                        @media(max-width: 700px){
+                                            display: none;
+                                        }
+                                        &.active {
+                                            color: var(--link-text);
+                                        }    
+                                    }
+                                    &.dot {
+                                        display: none;
+                                        font-size: var(--font-size-biggest);
+                                        line-height: .5;
+                                        @media(max-width: 700px){
+                                            display: block;
+                                        }
+                                        &.active {
+                                            color: var(--link-hover-text);
+                                        }    
+                                    }
+                                }
+                                > div {
+                                    > p {
+                                        font-size: var(--font-size-smallest);
+                                        text-align: center;
+                                        > a {
+                                            font-size: var(--font-size-smallest);
+                                            text-align: center;
+                                        }
+                                    }
+                                    button {
+                                        font-size: var(--font-size-small);
+                                        margin-top: calc(var(--default-gap) / 4);
+                                        padding: 0;
+                                    }
+                                }
+                            }
+                            &:hover {
+                                cursor: context-menu;
+                                border-collapse: collapse;
+                                border: var(--border);
+                                > p.title {
+                                    color: var(--link-hover-text);
+                                }
+                                > p.dot {
+                                    color: var(--link-hover-text);
+                                }
+                            }
+                            &.mask {
+                                border: var(--border-lightest);
+                            }
+                            &.active {
+                                border-color: var(--link-hover-text);
+                            }
+                        }
+                    }
+                }
+                &.users {
+                    padding: var(--default-gap) 0;
+                    margin-bottom: calc(1 * var(--default-gap));
+                    border-bottom: var(--border);
+                    > h2 {
+                        margin-bottom: 0;
+                    }
+                    > p.small {
+                        font-size: var(--font-size-smallest);
+                    }
+                    > div.balances {
+                        display: grid;
+                        grid-template-columns: 1fr max-content max-content max-content max-content;
+                        align-items: center;
+                        gap: var(--default-gap);
+
+                        margin-top: calc(var(--default-gap) / 2);
+                        > p.balance {
+                            font-size: var(--font-size-small);
+                        }
+                        > button {
+                            font-size: var(--font-size-small);
+                            height: max-content;
+                            width: max-content;
+                        }
+                    }
+                    > button.savebalance {
+                        margin-top: var(--default-gap);
+                    }
+                }
+                &.payments {
+                    padding: var(--default-gap) 0;
+                    border-bottom: var(--border);
+                    > p {
+                        overflow: hidden;
+                        margin-bottom: calc(var(--default-gap) / 8);
+                        &.header {
+                            color: var(--link-hover-text);
+                        }
+                    }
+                }    
+                &.registrations {
+                    padding: var(--default-gap) 0;
+                    border-bottom: var(--border);
+                    
+                    display: grid;
+                    grid-template-columns: auto max-content;
+                    align-items: center;
+                    gap: var(--default-gap);
+                    > div {        
+                        display: grid;
+                        grid-template-columns: max-content auto;
+                        align-items: center;
+                        gap: var(--default-gap);
+                        overflow: hidden;
+                        @media(max-width: 500px){
+                            grid-template-columns: none;
+                            grid-template-rows: max-content max-content;
+                            gap: 0;
+                        }
+                        > p.title {
+                            overflow: hidden;
+                        }
+                    }
+                }
+                &.handle-payments {
+                    margin-bottom: calc(2 * var(--default-gap));
+                    > form {
+                        > div {
+                            margin-top: var(--default-gap);
+                        }
+                    }
+                }
+                &.delete-payments {
+                    > div {
+                        padding: var(--default-gap) 0;
+                        border-bottom: var(--border);
+                        > button {
+                            margin-top: var(--default-gap);
+                        }
+                    }
+                }
+            }
+            > p.success-intro, > div.success {
+                margin-bottom: calc(2 * var(--default-gap));
+                > div.new_balance {
+                    display: grid;
+                    grid-template-columns: max-content max-content;
+                    gap: var(--default-gap);
+                    > p.balance {
+                        font-size: var(--font-size-big);
+                    }
+                }
+            }
+            > p.payments-introduction {
+                margin-bottom: var(--default-gap);
+            }
+            > div.subscription {
+                padding: var(--default-gap);
+                border-bottom: var(--border);
+                > p.user, > p.date {
+                    font-size: var(--font-size-small);
+                }
+            }
+        }
+        &#landing {
+            width: 100vw;
+            max-width: var(--max-width);
+            margin: 0 auto;
+    
+            display: grid;
+            align-content: center;
+                
+            >img#background-image {
+                z-index: -1;
+                position: fixed;
+                object-fit: cover;
+                min-height: 100%;
+                min-width: 100%;
+                width: auto;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+        
+                opacity: .1;
+            }
+
+            > div#header {
+                width: 100vw;
+                max-width: var(--max-width);
+                margin: 0 auto;
+            
+                > h1, > h2 {
+                    line-height: 1;
+                    text-align: center;
+                    opacity: .7;
+                }
+    
+                > h1 {
+                    font-size: calc(4rem + 5vw);
+                }
+                > h2 {
+                    color: var(--text);
+                    font-size: calc(2rem + 3vw);
+                    margin-bottom: calc(var(--default-gap) / 2);
+                }
+
+                > div {
+                    width: var(--width);
+                    max-width: var(--max-width);
+                    margin: calc(2 * var(--default-gap)) auto 0 auto;
+                    > div {
+                        > p {
+                            text-align: center;
+                        }
+                        &.intro {
+                            margin-bottom: calc(1.2 * var(--default-gap));
+                            > p {
+                                margin-top: calc(var(--default-gap) / 2);
+                            }           
+                        }
+                        &.subscribe {
+                            > p {
+                                margin-bottom: calc(var(--default-gap) / 2);
+                            }
+                            > form {
+                                > p.feedback {
+                                    margin-bottom: var(--default-gap);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.errors {
+            min-height: 100vh;
+
+            display: grid;
+            align-content: center;
+        }
+        > form.mailings {
+            > div.mailings {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+                column-gap: var(--default-gap);
+
+                padding: calc(var(--default-gap) / 2) var(--default-gap);
+                border: var(--border-lightest);
+                margin-bottom: calc(var(--default-gap) / 2);
+                
+                > p {
+                    width: max-content;
+                    font-size: var(--font-size-small);
+                }
+            }
+            > div.toggle {
+                margin-bottom: var(--default-gap);
+            }
+            > div.input {
+                margin-top: var(--default-gap);
+            }
+            > p.feedback {
+                margin-bottom: var(--default-gap);
+            }
+        }
+    }
+}
+
+div.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#nprogress .bar {
+    background: var(--link-text) !important;
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px var(--link-text), 0 0 5px var(--link-text) !important;
+}
+#nprogress .spinner-icon {
+    border-top-color: var(--link-text) !important;
+    border-left-color: var(--link-text) !important;
+}
